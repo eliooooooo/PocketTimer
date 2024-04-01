@@ -4,7 +4,7 @@ const Toggle = ({ state, toggle }) => {
 
     return (
         <button
-            onClick={() => { toggle(); }}
+            onClick = { toggle }
         >
             {state ? "Stopwatch" : "Timer"}
         </button>

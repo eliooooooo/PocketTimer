@@ -1,7 +1,7 @@
 import React from "react";
 import { useTimer } from "react-timer-hook";
 
-function Timer({ expiryTimestamp }) {
+function Timer({ expiryTimestamp, inputTime }) {
     const {
         seconds,
         minutes,
@@ -26,7 +26,7 @@ function Timer({ expiryTimestamp }) {
             <button
                 onClick={() => {
                     const time = new Date();
-                    time.setSeconds(time.getSeconds() + 300);
+                    time.setSeconds(time.getSeconds() + (inputTime*60));
                     restart(time);
                 }}
             >
