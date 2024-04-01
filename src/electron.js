@@ -4,11 +4,14 @@ function createWindow() {
     const win = new BrowserWindow({
     width: 800,
     height: 600,
+    // frame: false,
+    // titleBarStyle: 'hidden',
     webPreferences: {
         nodeIntegration: true,
     }});
 
     win.loadURL('http://localhost:3000');
+    win.setAlwaysOnTop(true, 'floating');
 
     // Ouvrir les outils de développement (facultatif)
     win.webContents.openDevTools();
