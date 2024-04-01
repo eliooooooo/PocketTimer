@@ -16,7 +16,7 @@ function Timer({ expiryTimestamp }) {
     return (
         <div style={{ textAlign: "center" }}>
             <p>Timer</p>
-            <div style={{ fontSize: "100px" }}>
+            <div style={{ fontSize: "100px", fontFamily: "AlarmClock" }}>
                 <span>{hours.toString().padStart(2, '0')}</span>:<span>{minutes.toString().padStart(2, '0')}</span>:<span>{seconds.toString().padStart(2, '0')}</span>
             </div>
             <p>{isRunning ? "Running" : "Not running"}</p>
