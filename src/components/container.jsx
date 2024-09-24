@@ -22,7 +22,7 @@ function Container({ expiryTimestamp }) {
         <div style={{ textAlign: "center" }}>
             <h1>Pocket Timer</h1>
             <Toggle state={state} toggle={toggle}/>
-            <TimeInput time={time} changeTime={changeTime} submitTime={submitTime} />
+            {state ? <TimeInput time={time} changeTime={changeTime} submitTime={submitTime} /> : null}
             {state ? <Timer inputTime={time} /> : <Stopwatch />}
             </div>
     );

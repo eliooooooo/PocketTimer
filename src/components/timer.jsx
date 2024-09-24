@@ -12,7 +12,15 @@ function Timer({ expiryTimestamp, inputTime }) {
         resume,
         restart,
     } = useTimer({ expiryTimestamp, onExpire: () => console.warn("onExpire called") });
-    
+
+    const toggle = () => {
+        if (isRunning) {
+            pause();
+        } else {
+            start();
+        }
+    };
+
     return (
         <div style={{ textAlign: "center" }}>
             <p>Timer</p>
@@ -20,13 +28,12 @@ function Timer({ expiryTimestamp, inputTime }) {
                 <span>{hours.toString().padStart(2, '0')}</span>:<span>{minutes.toString().padStart(2, '0')}</span>:<span>{seconds.toString().padStart(2, '0')}</span>
             </div>
             <p>{isRunning ? "Running" : "Not running"}</p>
-            <button onClick={start}>Start</button>
-            <button onClick={pause}>Pause</button>
+            <button onClick={toggle}>{isRunning ? "Pause" : "Start"}</button>
             <button onClick={resume}>Resume</button>
             <button
                 onClick={() => {
                     const time = new Date();
-                    time.setSeconds(time.getSeconds() + (inputTime*60));
+                    time.setSeconds(time.getSeconds() + (inputTime * 60));
                     restart(time);
                 }}
             >

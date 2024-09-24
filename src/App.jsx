@@ -1,6 +1,4 @@
-import Header from "./components/header";
 import Container from "./components/container";
-import TimeInput from "./components/timeinput";
 
 function App() {
   const time = new Date();
@@ -8,9 +6,7 @@ function App() {
 
   return (
     <div>
-      <Header />
       <Container expiryTimestamp={time} />
-      <TimeInput />
     </div>
   );
 }
