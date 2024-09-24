@@ -2,14 +2,16 @@ const { app, BrowserWindow } = require('electron');
 
 function createWindow() {
     const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    transparent: true,
-    // frame: false,
-    // titleBarStyle: 'hidden',
-    webPreferences: {
-        nodeIntegration: true,
-    }});
+        width: 800,
+        height: 600,
+        transparent: true,
+        frame: false,
+        resizable: true,
+        titleBarStyle: 'hidden',
+        webPreferences: {
+            nodeIntegration: true,
+        }
+    });
 
     win.loadURL('http://localhost:3000');
     win.setAlwaysOnTop(true, 'floating');
